@@ -36,7 +36,6 @@
 				args="dsr_joint_$(arg controller)_controller dsr_joint_publisher" ns="$(arg ns)$(arg model)">
 	</node>
 
-
 	<!--node pkg="dsr_control" type="run.sh" name="foo"/-->
 	<!--node pkg="aliencontrol" type="aliencontrol" name="aliencontrol"-->
     <!--param name="cmd" value="run.sh"/-->
