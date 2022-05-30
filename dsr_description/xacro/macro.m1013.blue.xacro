@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 
 <robot name="m1013" xmlns:xacro="http://www.ros.org/wiki/xacro">
-	<xacro:include filename="$(find dsr_description)/config/macro.gazebo.xacro" />
-	<xacro:include filename="$(find dsr_description)/config/macro.transmission.xacro" />
-	<xacro:include filename="$(find dsr_description)/config/macro.materials.xacro" />
+<!--	<xacro:include filename="$(find dsr_description)/config/macro.gazebo.xacro" />-->
+<!--	<xacro:include filename="$(find dsr_description)/config/macro.transmission.xacro" />-->
+<!--	<xacro:include filename="$(find dsr_description)/config/macro.materials.xacro" />-->
 	<xacro:macro name="m1013" params="namespace">
-		<xacro:dsr_materials />
+<!--		<xacro:dsr_materials />-->
 		<link name="base_0">
 			<inertial>
 				<mass value="4.12"/>
@@ -205,7 +205,7 @@
 				</geometry>
 			</visual>
 		</link>
-		<xacro:dsr_transmission />
-		<xacro:dsr_gazebo namespace="${namespace}" />
+<!--		<xacro:dsr_transmission />-->
+<!--		<xacro:dsr_gazebo namespace="${namespace}" />-->
 	</xacro:macro>
 </robot>
