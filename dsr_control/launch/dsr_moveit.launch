@@ -9,6 +9,10 @@
     <arg name="gripper" default="none"/>
     <arg name="mobile" default="none"/>
     <arg name="yaml" default="dsr_control"/>
+	
+    <!--  Ajout pour simulation-->
+    <param name="doosan_description" command="$(find xacro)/xacro '$(find dsr_description)/xacro/$(arg model).urdf.xacro' '--inorder' 'namespace:=$(arg ns)' color:=$(arg color) gripper:=$(arg gripper)"/>
+
 
 	<!-- Run Doosan Robot emulator in virtual mode -->
         <group if="$(eval arg('mode') == 'virtual')">         	
