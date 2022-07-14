@@ -21,11 +21,20 @@
      <xacro:include filename="$(find dsr_description)/xacro/robotiq_2f.urdf.xacro" />
   </xacro:if>
 
+  <link name="tcp" />
+
   <!-- World fixed joint-->
   <joint name="world_fixed" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="base_0"/>
+  </joint>
+
+  <!-- TCP fixed joint-->
+  <joint name="tcp_fixed" type="fixed">
+    <origin xyz="0 0 0.1" rpy="0 -1.57075 0"/>
+    <parent link="link6"/>
+    <child link="tcp"/>
   </joint>
 
 </robot>
