@@ -8,19 +8,12 @@
   <xacro:property name="cr" value="$(arg color)"/>
   <xacro:property name="gr" value="$(arg gripper)"/>
 
-  	<!-- <xacro:include filename="$(find dsr_description)/config/macro.gazebo.xacro" /> -->
-	<xacro:include filename="$(find dsr_description)/config/macro.transmission.xacro" />
-	<xacro:include filename="$(find dsr_description)/config/macro.materials.xacro" />
-   
-
   <xacro:if value="${cr == 'white'}">
      <xacro:include filename="$(find dsr_description)/xacro/macro.m1013.white.xacro" />
   </xacro:if>
   <xacro:if value="${cr == 'blue'}">
      <xacro:include filename="$(find dsr_description)/xacro/macro.m1013.blue.xacro" />
   </xacro:if>
-
-
   <xacro:m1013 namespace="$(arg namespace)"/>
 
   <link name="world" />
@@ -28,12 +21,9 @@
      <xacro:include filename="$(find dsr_description)/xacro/robotiq_2f.urdf.xacro" />
   </xacro:if>
 
-<<<<<<< Updated upstream
-=======
   <link name="tcp" />
   <link name="map" />
 
->>>>>>> Stashed changes
   <!-- World fixed joint-->
   <joint name="world_fixed" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -41,8 +31,6 @@
     <child link="base_0"/>
   </joint>
 
-<<<<<<< Updated upstream
-=======
     <!-- World fixed joint-->
     <joint name="map_planar" type="planar">
       <origin xyz="0 0 0.76" rpy="0 0 0"/>
@@ -57,6 +45,5 @@
     <child link="tcp"/>
   </joint>
 
->>>>>>> Stashed changes
 </robot>
 
