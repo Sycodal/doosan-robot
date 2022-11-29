@@ -33,7 +33,7 @@
 
     <!-- World fixed joint-->
     <joint name="map_planar" type="planar">
-      <origin xyz="0 0 0.76" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <parent link="map"/>
       <child link="world"/>
     </joint>
