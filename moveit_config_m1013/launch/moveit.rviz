@@ -4,16 +4,15 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /MotionPlanning1
-        - /MotionPlanning1/Scene Robot1
         - /MotionPlanning1/Planning Request1
-        - /MotionPlanning1/Planned Path1
+        - /MotionPlanning1/Planning Metrics1
         - /TF1
         - /TF1/Frames1
         - /DepthCloud1/Auto Size1
         - /Image1
+        - /DepthCloud2/Auto Size1
       Splitter Ratio: 0.7425600290298462
-    Tree Height: 402
+    Tree Height: 296
   - Class: rviz/Help
     Name: Help
   - Class: rviz/Views
@@ -92,6 +91,10 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          camera_depth:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           camera_visor:
             Alpha: 1
             Show Axes: false
@@ -136,6 +139,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           world:
             Alpha: 1
             Show Axes: false
@@ -153,7 +157,7 @@ Visualization Manager:
       Planning Metrics:
         Payload: 1
         Show Joint Torques: false
-        Show Manipulability: false
+        Show Manipulability: true
         Show Manipulability Index: false
         Show Weight Limit: false
         TextHeight: 0.07999999821186066
@@ -201,6 +205,10 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          camera_depth:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           camera_visor:
             Alpha: 1
             Show Axes: false
@@ -245,6 +253,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           world:
             Alpha: 1
             Show Axes: false
@@ -258,39 +267,41 @@ Visualization Manager:
       Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: false
+        All Enabled: true
         base_0:
-          Value: false
+          Value: true
         camera_base:
-          Value: false
+          Value: true
         camera_body:
-          Value: false
+          Value: true
+        camera_depth:
+          Value: true
+        camera_link:
+          Value: true
         camera_visor:
-          Value: false
-        depth_camera_link:
-          Value: false
-        imu_link:
-          Value: false
+          Value: true
         link1:
-          Value: false
+          Value: true
         link2:
-          Value: false
+          Value: true
         link3:
-          Value: false
+          Value: true
         link4:
-          Value: false
+          Value: true
         link5:
-          Value: false
+          Value: true
         link6:
-          Value: false
-        rgb_camera_link:
-          Value: false
+          Value: true
+        machine:
+          Value: true
+        map:
+          Value: true
         vacuum_base_link:
-          Value: false
+          Value: true
         vacuum_tcp:
           Value: true
         world:
-          Value: false
+          Value: true
       Marker Alpha: 1
       Marker Scale: 0.5
       Name: TF
@@ -309,13 +320,12 @@ Visualization Manager:
                         camera_base:
                           camera_body:
                             {}
+                          camera_depth:
+                            {}
                           camera_visor:
                             {}
-                          depth_camera_link:
-                            imu_link:
-                              {}
-                            rgb_camera_link:
-                              {}
+                        camera_link:
+                          {}
                         vacuum_base_link:
                           vacuum_tcp:
                             {}
@@ -346,6 +356,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        camera_depth:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         camera_visor:
           Alpha: 1
           Show Axes: false
@@ -390,6 +404,7 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         world:
           Alpha: 1
           Show Axes: false
@@ -400,6 +415,94 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
+    - Alpha: 1
+      Auto Size:
+        Auto Size Factor: 1
+        Value: true
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/DepthCloud
+      Color: 255; 255; 255
+      Color Image Topic: ""
+      Color Transformer: RGB8
+      Color Transport Hint: raw
+      Decay Time: 0
+      Depth Map Topic: /camera/depth/image_raw
+      Depth Map Transport Hint: raw
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: DepthCloud
+      Occlusion Compensation:
+        Occlusion Time-Out: 30
+        Value: false
+      Position Transformer: XYZ
+      Queue Size: 5
+      Selectable: true
+      Size (Pixels): 3
+      Style: Flat Squares
+      Topic Filter: true
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /image_topic_2
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: raw
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: RGB8
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: PointCloud2
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.009999999776482582
+      Style: Flat Squares
+      Topic: /camera/depth/points
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Class: rviz/Image
+      Enabled: false
+      Image Topic: /image_topic_2
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: raw
+      Unreliable: false
+      Value: false
     - Alpha: 1
       Auto Size:
         Auto Size Factor: 1
@@ -436,18 +539,6 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
-    - Class: rviz/Image
-      Enabled: true
-      Image Topic: /image_topic_2
-      Max Value: 1
-      Median window: 5
-      Min Value: 0
-      Name: Image
-      Normalize Range: true
-      Queue Size: 2
-      Transport Hint: raw
-      Unreliable: false
-      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -464,7 +555,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 2.4316189289093018
+      Distance: 5.552385330200195
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -472,17 +563,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.6661346554756165
-        Y: -0.05631226301193237
-        Z: 1.2964015922989347e-06
+        X: 0.034166038036346436
+        Y: -0.026030123233795166
+        Z: -8.589695426053368e-07
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.609796941280365
+      Pitch: 0.8097959160804749
       Target Frame: world
-      Yaw: 4.399950981140137
+      Yaw: 2.6549482345581055
     Saved: ~
 Window Geometry:
   Displays:
@@ -498,7 +589,7 @@ Window Geometry:
     collapsed: false
   MotionPlanning - Trajectory Slider:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000200000000000002a20000039efc0200000007fb000000100044006900730070006c006100790073000000003d00000223000000c900fffffffb0000000800480065006c00700000000342000000bb0000006e00fffffffb0000000a0056006900650077007300000003b0000000b0000000a400fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000001600000016fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067000000016d0000019d0000017d00ffffff0000000200000738000001defc0100000001fb0000000a0049006d0061006700650100000000000007380000005e00ffffff00000738000001ba00000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000200000000000002a20000039efc0200000007fb000000100044006900730070006c006100790073010000003d000001b9000000c900fffffffb0000000800480065006c00700000000342000000bb0000006e00fffffffb0000000a0056006900650077007300000003b0000000b0000000a400fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000001600000016fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e006701000001fc000001df0000017d00ffffff000000020000049000000073fc0100000002fb0000000a0049006d00610067006501000002a8000004900000005e00fffffffb0000000a0049006d00610067006500000002a8000004900000005e00ffffff000004900000032500000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Views:
     collapsed: false
   Width: 1848
