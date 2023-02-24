@@ -4,15 +4,16 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /MotionPlanning1/Planning Request1
-        - /MotionPlanning1/Planning Metrics1
-        - /TF1
+        - /MotionPlanning1
+        - /MotionPlanning1/Planned Path1
         - /TF1/Frames1
         - /DepthCloud1/Auto Size1
         - /Image1
         - /DepthCloud2/Auto Size1
+        - /Trajectory1
+        - /MarkerArray1
       Splitter Ratio: 0.7425600290298462
-    Tree Height: 296
+    Tree Height: 354
   - Class: rviz/Help
     Name: Help
   - Class: rviz/Views
@@ -259,7 +260,7 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
         Robot Alpha: 0.5
-        Show Robot Collision: false
+        Show Robot Collision: true
         Show Robot Visual: true
       Value: true
       Velocity_Scaling_Factor: 0.1
@@ -276,9 +277,13 @@ Visualization Manager:
           Value: true
         camera_depth:
           Value: true
-        camera_link:
-          Value: true
         camera_visor:
+          Value: true
+        depth_camera_link:
+          Value: true
+        goal:
+          Value: true
+        imu_link:
           Value: true
         link1:
           Value: true
@@ -292,9 +297,7 @@ Visualization Manager:
           Value: true
         link6:
           Value: true
-        machine:
-          Value: true
-        map:
+        rgb_camera_link:
           Value: true
         vacuum_base_link:
           Value: true
@@ -324,11 +327,16 @@ Visualization Manager:
                             {}
                           camera_visor:
                             {}
-                        camera_link:
-                          {}
+                          depth_camera_link:
+                            imu_link:
+                              {}
+                            rgb_camera_link:
+                              {}
                         vacuum_base_link:
                           vacuum_tcp:
                             {}
+          goal:
+            {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -539,6 +547,294 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
+    - Class: moveit_rviz_plugin/Trajectory
+      Color Enabled: false
+      Enabled: true
+      Interrupt Display: false
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        base_0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        camera_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        camera_body:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        camera_depth:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_visor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        vacuum_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        vacuum_tcp:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        world:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+      Loop Animation: false
+      Name: Trajectory
+      Robot Alpha: 0.5
+      Robot Color: 150; 50; 150
+      Robot Description: robot_description
+      Show Robot Collision: false
+      Show Robot Visual: true
+      Show Trail: false
+      State Display Time: 3x
+      Trail Step Size: 1
+      Trajectory Topic: /move_group/display_planned_path
+      Use Sim Time: false
+      Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /dsr01m1013/visualization_markers
+      Name: MarkerArray
+      Namespaces:
+        marker_test_0: true
+        marker_test_1: true
+        marker_test_10: true
+        marker_test_100: true
+        marker_test_101: true
+        marker_test_102: true
+        marker_test_103: true
+        marker_test_104: true
+        marker_test_105: true
+        marker_test_106: true
+        marker_test_107: true
+        marker_test_108: true
+        marker_test_109: true
+        marker_test_11: true
+        marker_test_110: true
+        marker_test_111: true
+        marker_test_112: true
+        marker_test_113: true
+        marker_test_114: true
+        marker_test_115: true
+        marker_test_116: true
+        marker_test_117: true
+        marker_test_118: true
+        marker_test_119: true
+        marker_test_12: true
+        marker_test_120: true
+        marker_test_121: true
+        marker_test_122: true
+        marker_test_123: true
+        marker_test_124: true
+        marker_test_125: true
+        marker_test_126: true
+        marker_test_127: true
+        marker_test_128: true
+        marker_test_129: true
+        marker_test_13: true
+        marker_test_130: true
+        marker_test_131: true
+        marker_test_132: true
+        marker_test_133: true
+        marker_test_134: true
+        marker_test_135: true
+        marker_test_136: true
+        marker_test_137: true
+        marker_test_138: true
+        marker_test_139: true
+        marker_test_14: true
+        marker_test_140: true
+        marker_test_141: true
+        marker_test_142: true
+        marker_test_143: true
+        marker_test_144: true
+        marker_test_145: true
+        marker_test_146: true
+        marker_test_147: true
+        marker_test_148: true
+        marker_test_149: true
+        marker_test_15: true
+        marker_test_150: true
+        marker_test_151: true
+        marker_test_152: true
+        marker_test_153: true
+        marker_test_154: true
+        marker_test_155: true
+        marker_test_156: true
+        marker_test_157: true
+        marker_test_158: true
+        marker_test_159: true
+        marker_test_16: true
+        marker_test_160: true
+        marker_test_161: true
+        marker_test_162: true
+        marker_test_163: true
+        marker_test_164: true
+        marker_test_165: true
+        marker_test_166: true
+        marker_test_167: true
+        marker_test_168: true
+        marker_test_169: true
+        marker_test_17: true
+        marker_test_170: true
+        marker_test_171: true
+        marker_test_172: true
+        marker_test_173: true
+        marker_test_174: true
+        marker_test_175: true
+        marker_test_176: true
+        marker_test_177: true
+        marker_test_178: true
+        marker_test_179: true
+        marker_test_18: true
+        marker_test_180: true
+        marker_test_181: true
+        marker_test_182: true
+        marker_test_183: true
+        marker_test_184: true
+        marker_test_185: true
+        marker_test_186: true
+        marker_test_187: true
+        marker_test_188: true
+        marker_test_189: true
+        marker_test_19: true
+        marker_test_2: true
+        marker_test_20: true
+        marker_test_21: true
+        marker_test_22: true
+        marker_test_23: true
+        marker_test_24: true
+        marker_test_25: true
+        marker_test_26: true
+        marker_test_27: true
+        marker_test_28: true
+        marker_test_29: true
+        marker_test_3: true
+        marker_test_30: true
+        marker_test_31: true
+        marker_test_32: true
+        marker_test_33: true
+        marker_test_34: true
+        marker_test_35: true
+        marker_test_36: true
+        marker_test_37: true
+        marker_test_38: true
+        marker_test_39: true
+        marker_test_4: true
+        marker_test_40: true
+        marker_test_41: true
+        marker_test_42: true
+        marker_test_43: true
+        marker_test_44: true
+        marker_test_45: true
+        marker_test_46: true
+        marker_test_47: true
+        marker_test_48: true
+        marker_test_49: true
+        marker_test_5: true
+        marker_test_50: true
+        marker_test_51: true
+        marker_test_52: true
+        marker_test_53: true
+        marker_test_54: true
+        marker_test_55: true
+        marker_test_56: true
+        marker_test_57: true
+        marker_test_58: true
+        marker_test_59: true
+        marker_test_6: true
+        marker_test_60: true
+        marker_test_61: true
+        marker_test_62: true
+        marker_test_63: true
+        marker_test_64: true
+        marker_test_65: true
+        marker_test_66: true
+        marker_test_67: true
+        marker_test_68: true
+        marker_test_69: true
+        marker_test_7: true
+        marker_test_70: true
+        marker_test_71: true
+        marker_test_72: true
+        marker_test_73: true
+        marker_test_74: true
+        marker_test_75: true
+        marker_test_76: true
+        marker_test_77: true
+        marker_test_78: true
+        marker_test_79: true
+        marker_test_8: true
+        marker_test_80: true
+        marker_test_81: true
+        marker_test_82: true
+        marker_test_83: true
+        marker_test_84: true
+        marker_test_85: true
+        marker_test_86: true
+        marker_test_87: true
+        marker_test_88: true
+        marker_test_89: true
+        marker_test_9: true
+        marker_test_90: true
+        marker_test_91: true
+        marker_test_92: true
+        marker_test_93: true
+        marker_test_94: true
+        marker_test_95: true
+        marker_test_96: true
+        marker_test_97: true
+        marker_test_98: true
+        marker_test_99: true
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -555,7 +851,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 5.552385330200195
+      Distance: 2.3193557262420654
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -563,22 +859,22 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.034166038036346436
-        Y: -0.026030123233795166
+        X: 0.735684871673584
+        Y: -0.45455530285835266
         Z: -8.589695426053368e-07
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.8097959160804749
+      Pitch: 0.13479594886302948
       Target Frame: world
-      Yaw: 2.6549482345581055
+      Yaw: 1.4849544763565063
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1016
+  Height: 1136
   Help:
     collapsed: false
   Hide Left Dock: false
@@ -589,7 +885,9 @@ Window Geometry:
     collapsed: false
   MotionPlanning - Trajectory Slider:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000200000000000002a20000039efc0200000007fb000000100044006900730070006c006100790073010000003d000001b9000000c900fffffffb0000000800480065006c00700000000342000000bb0000006e00fffffffb0000000a0056006900650077007300000003b0000000b0000000a400fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000001600000016fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e006701000001fc000001df0000017d00ffffff000000020000049000000073fc0100000002fb0000000a0049006d00610067006501000002a8000004900000005e00fffffffb0000000a0049006d00610067006500000002a8000004900000005e00ffffff000004900000032500000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000200000000000002a200000416fc0200000009fb000000100044006900730070006c006100790073010000003d000001f3000000c900fffffffb0000000800480065006c00700000000342000000bb0000006e00fffffffb0000000a0056006900650077007300000003b0000000b0000000a400fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000001600000016fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e006701000002360000021d0000017d00fffffffb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb0000003c005400720061006a006500630074006f007200790020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff00000016000000160000000200000490000001a7fc0100000002fb0000000a0049006d00610067006500000002a8000004900000005e00fffffffb0000000a0049006d00610067006501000002a8000004900000005e00ffffff000004900000026900000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Trajectory - Trajectory Slider:
+    collapsed: false
   Views:
     collapsed: false
   Width: 1848
